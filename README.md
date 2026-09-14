@@ -38,19 +38,20 @@ Screenshot: for-loop + `ALL DONE!!` → `screenshots/M1L1_structure_for_loop.jpg
 
 ## M1L2 — caption recipe and review images
 
-First run downloads the recipe image zip into `data/` (large, gitignored).
+Assessment screenshot can come from the **notebook** cell (preferred if you want the lab-shaped frame) or from the script. Notebook is local only (`notebooks/`, gitignored).
+
+```powershell
+jupyter lab notebooks/M1L2_Process_Multimodal_Data_with_LLMs.ipynb
+```
+
+Run top to bottom. When the recipe caption loop finishes (`ALL DONE!`), screenshot **that cell’s code + output** → `screenshots/M1L2_caption_all_recipes.jpg`.
+
+Script equivalent (optional):
 
 ```powershell
 python src/caption_into_record.py --limit 2
+python src/caption_into_record.py --skip-reviews
 python src/caption_into_record.py
 ```
-
-For the assessment frame only (recipe caption loop):
-
-```powershell
-python src/caption_into_record.py --skip-reviews
-```
-
-Screenshot: recipe caption for-loop + `ALL DONE!` → `screenshots/M1L2_caption_all_recipes.jpg`.
 
 Writes `data/augmented_food_recipe.json` and `data/augmented_user_review.json` (gitignored).
